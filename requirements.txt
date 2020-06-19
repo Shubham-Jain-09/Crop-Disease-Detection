@@ -8,6 +8,6 @@ Jinja2==2.10.1
 keras==2.3.1
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
+tensorflow==1.7.0
 Werkzeug==0.15.5
-numpy>=1.9.2
-streamlit
+
