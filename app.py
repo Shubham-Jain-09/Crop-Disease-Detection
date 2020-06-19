@@ -52,7 +52,7 @@ def model_predict(img_path, model):
     return class_name
 
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
     # Main page
     return render_template('index.html')
