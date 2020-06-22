@@ -2,10 +2,14 @@
 {% extends "base.html" %} {% block content %}
 
 <h3>List of Crops on which model can be used for prediction</h3>
-<img src="Screenshot_3.png">
-
+<img src="{{url_for('static', filename='screenshot_3.png')}}" align="middle" />
 <h3>List of Crop Diseases on which model can be used for prediction</h3>
-<img src="Screenshot_2.png">
+
+<img src="{{url_for('static', filename='screenshot_2.png')}}" align="middle" />
+<h3>Use clear images of leaves on which our model can convolve and identify disease if exists</h3>
+<h3> Here is an example image</h3>  
+<img src="{{url_for('static', filename='strawberry-plant-leaf-spot.jpg')}}" align="middle" style="height: 224; width:224;"/>
+
 <div>
     <form id="upload-file" method="post" enctype="multipart/form-data">
         <label for="imageUpload" class="upload-label">
@@ -25,11 +29,10 @@
     </div>
 
     <div class="loader" style="display:none;"></div>
-
+    <h4> Predicted Output is:</h4>
     <h3 id="result">
         <span> </span>
     </h3>
-    <h4>Hope our Model is working nice for you</h4>
     <h4> Thanks for the visit</h4>
 
 </div>
