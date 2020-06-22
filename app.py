@@ -19,7 +19,6 @@ from gevent.pywsgi import WSGIServer
 # Define a flask app
 app = Flask(__name__)
 
-# Model saved with Keras model.save()
 MODEL_PATH = 'Model.hdf5'
 
 # Load your trained model
