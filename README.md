@@ -6,12 +6,10 @@
     3    Problem Statement    
     4    Project Description    
     5    Assumptions
-    8    Technologies to be used      
-    11   Tools    
-    12   Advantages of this Project    
-    13   Future Scope and further enhancement of the Project  
-    15   Conclusion    
-    16   References    
+    6    Technologies and Tools to be Used    
+    7    Advantages of this Project    
+    8    Future Scope and further enhancement of the Project  
+    9    Conclusion    
     
  ## Project Title
 In Agriculture, leaf diseases have grown to be a dilemma as it can cause a significant diminution in both the quality and quantity of agricultural yields. Thus, automated recognition of diseases on leaves plays a crucial role in the agriculture sector. This Crop Disease detection project is based on the same idea which can be used to detect disease in specific crops on which it is trained.
@@ -64,6 +62,40 @@ The List of crop diseases on Which Model is trained on is:
 <img src="static/Screenshot_2.png">
 
 
+Above image indicates that we have 15 crops on which our model works for 38 specific cases which are basic classes on which our model will perform classification process.
+
+
+## Technologies and Tools to be Used -:
+- Keras -> A High Level Deep Learning API to Use Neural Network in Project.
+- Tensorflow -> It is used by keras to perform low level operation or as a Backend Engine. Theano and CNTK can be used in place of Tensorflow
+- Jupyter Notebook -> A platform through which you can access all libraries and use them according to your requirement. It is used to implement your Logic.
+- Google Colab -> Google Colab can be used as online jupyter notebook since it provides free GPU which are must with this Project because the dataset is Huge.
+- Kaggle -> Even kaggle can be used where you can upload your data and work with that data and the dataset of this project is present on kaggle so creating notebook on kaggle will be beneficial.
+- Python -> Python is a language through which this whole project is made and it is used to create model via Jupyter notebook libraries and also used to create web app.
+- Flask -> Flask is a Micro-Framework for web development by which we can create web app like I did.
+- HTML -> Hyper Text Markup Language is used for loading static contents on a web page.
+- CSS -> Cascading Style Sheet is used to add Style on our page to make it more attractive.
+- JavaScript -> It is scripting language used for uploading dynamic content in this project client side scripting is used with JavaScript rather than Serveer side.
+- GitHub -> It is used to deploy the project and after deploying it on github we can connect our repository to any cloud service provider.
+- GitLFS -> It is used to deploy large files on github since we can not upload file greater than 25MB on github and the Model size is approx 124MB.
+- Heroku CLI -> It is used to deploy the project on Heroku server which provides the server for web app deployment to users.
+
+### Advantages of this Project
+- Easily detect crop diseases to simplify treatment process.
+- One touch process to analyze crop defects.
+- The model will also help in improving harvest quality and accuracy, which is known as precision agriculture.
+
+## Future Scope and further enhancement of the Project
+- In future, the app will also provide the recommendation and treatment option for the diseases.
+- Adding more diseases or classes of model such that it can be used on many other crops and there diseases.
+- While adding recommendation and Treatment approach we can add local language for farmers so that this app can be more beneficial to them.
+
+## Conclusions
+This project can be used for simplifying the process of crop disease detection. This project follows one touch process for detection of disease in crop if present. By detecting disease one can take steps for treatment of the same. This project will be beneficial on the specific crop category on which it is trained. This project can save a lot of time which is wasted on detection of diseases found in crop that too with good accuracy.
+
+## References
+- [Dataset](https://datasetsearch.research.google.com/search?query=plant-diseasesdataset&docid=ouHePAWoVIMq2IHEAAAAAA%3D%3D)-> Link of Dataset
+- 
 
 
 
