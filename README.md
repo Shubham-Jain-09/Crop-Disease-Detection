@@ -5,16 +5,11 @@
     2    Domain    
     3    Problem Statement    
     4    Project Description    
-    5    Scope of the Work    
-    6    Project Modules    
-    7    Implementation Methodology    
-    8    Technologies to be used    
-    9    Software Platform    
-    10   Hardware Platform    
+    5    Assumptions
+    8    Technologies to be used      
     11   Tools    
     12   Advantages of this Project    
-    13   Future Scope and further enhancement of the Project    
-    14   Team Details    
+    13   Future Scope and further enhancement of the Project  
     15   Conclusion    
     16   References    
     
@@ -27,7 +22,7 @@ In Agriculture, leaf diseases have grown to be a dilemma as it can cause a signi
 ## Problem Statement
 In Agriculture sector plants or crops, cultivation has seen fast development in both the quality and quantity of food production. However, the presence of diseases on crops especially on leaves has hindered the quality of agricultural goods. This severe effect can disturb any nation's economy especially of those where 70% of the inhabitants rely on the products from the agricultural sector for their livelihood and endurance. This problem can be solved by the detection of crop diseases and to detect crop disease this project can be used. This project will diagnose the disease based on images of leaves.
 
-## Product Functions
+## Project Description
 Functional requirements define the internal workings of the software: that is, the technical details, data manipulation and processing and other specific functionality that show how the use cases are to be satisfied. They are supported by non-functional requirements, which impose constraints on the design or implementation.
 IMAGE PROCESSING Digital image processing is the use of computer algorithms to perform image processing on digital images. It allows a much wider range of algorithms to be applied to the input data and can avoid problems such as the build-up of noise and signal distortion during processing. Since images are defined over two dimensions (perhaps more) digital image processing may be model in the form of [multidimensional systems].
 The following steps are followed for detecting disease in crop:
@@ -54,6 +49,14 @@ Simple web app is created using flask which is a micro-framework for web app cre
 ### Model Deployment-:
 
 Our Model is deployed on Heroku Server which is easy to integrate by connecting your Github repo to it. Since our Model is Huge and to upload huge files on Github we need to use Gitlfs to deploy our model on github as i have done and when connecting your repository to Heroku do not forget to add Gitlfs buildpack otherwise you will receive error rather than a web app. You can cofigure your repository for Continuos Integration and than you can enble continuous integration on heroku server which will update your app as soon as your repository is updated.
+
+## Assumptions-:
+Since model is trained for specific crops only so it can diagnose those specific crops only.
+The List of Crops For which this model will be helpful is:
+<img src="https://drive.google.com/file/d/1ffF7oUPBWmUEPRABwc-3lOtBOIFpnDyg/view?usp=sharing">
+
+The crop which can be used for diagnosis can only diagnose specific disease for which the model is trained. 
+
 
 
 
