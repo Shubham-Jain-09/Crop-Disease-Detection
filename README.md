@@ -53,7 +53,7 @@ Our Model is deployed on Heroku Server which is easy to integrate by connecting 
 ## Assumptions-:
 Since model is trained for specific crops only so it can diagnose those specific crops only.
 The List of Crops For which this model will be helpful is:
-<img src="static/ScreenShot_3.png">
+<img src="static/Screenshot_3.png">
 
 The crop which can be used for diagnosis can only diagnose specific disease for which the model is trained. 
 
