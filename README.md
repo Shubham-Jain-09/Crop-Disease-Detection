@@ -1,4 +1,6 @@
 # Plant-Disease-Detection
+The app can be visited by clicking [here](https://crop-disease-detection-by-leaf.herokuapp.com/) or you can click on this link https://crop-disease-detection-by-leaf.herokuapp.com/
+App is Deployed on Heroku Server and can be used for image classification. As of now since GitLFS limit is over for this month I am not able to proceed with changes I have done on web Page so currently images will not be visible after the month ends I am gonna deploy it again but still app is good in performing for what it has been created.
 ## Table of Contents
 
     1    Project Title    
@@ -22,7 +24,7 @@ In Agriculture sector plants or crops, cultivation has seen fast development in 
 
 ## Project Description
 Functional requirements define the internal workings of the software: that is, the technical details, data manipulation and processing and other specific functionality that show how the use cases are to be satisfied. They are supported by non-functional requirements, which impose constraints on the design or implementation.
-IMAGE PROCESSING Digital image processing is the use of computer algorithms to perform image processing on digital images. It allows a much wider range of algorithms to be applied to the input data and can avoid problems such as the build-up of noise and signal distortion during processing. Since images are defined over two dimensions (perhaps more) digital image processing may be model in the form of [multidimensional systems].
+IMAGE PROCESSING Digital image processing is the use of computer algorithms to perform image processing on digital images. It allows a much wider range of algorithms to be applied to the input data and can avoid problems such as the build-up of noise and signal distortion during processing. Since images are defined over two dimensions (perhaps more) digital image processing may be model in the form of multidimensional systems.
 The following steps are followed for detecting disease in crop:
 
 ### Image Acquisition-: 
@@ -93,9 +95,9 @@ Above image indicates that we have 15 crops on which our model works for 38 spec
 ## Conclusions
 This project can be used for simplifying the process of crop disease detection. This project follows one touch process for detection of disease in crop if present. By detecting disease one can take steps for treatment of the same. This project will be beneficial on the specific crop category on which it is trained. This project can save a lot of time which is wasted on detection of diseases found in crop that too with good accuracy.
 
-## References
+## DataSet Link
 - [Dataset](https://datasetsearch.research.google.com/search?query=plant-diseasesdataset&docid=ouHePAWoVIMq2IHEAAAAAA%3D%3D)-> Link of Dataset
-- 
+
 
 
 
