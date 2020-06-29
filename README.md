@@ -1,4 +1,4 @@
-# Plant-Disease-Detection
+# Crop-Disease-Detection
 The app can be visited by clicking [here](https://crop-disease-detection-by-leaf.herokuapp.com/) or you can click on this link https://crop-disease-detection-by-leaf.herokuapp.com/
 App is Deployed on Heroku Server and can be used for image classification. As of now since GitLFS limit is over for this month I am not able to proceed with changes I have done on web Page so currently images will not be visible after the month ends I am gonna deploy it again but still app is good in performing for what it has been created.
 ## Table of Contents
