@@ -75,7 +75,7 @@ Above image indicates that we have 15 crops on which our model works for 38 spec
 - Flask -> Flask is a Micro-Framework for web development by which we can create web app like I did.
 - HTML -> Hyper Text Markup Language is used for loading static contents on a web page.
 - CSS -> Cascading Style Sheet is used to add Style on our page to make it more attractive.
-- JavaScript -> It is scripting language used for uploading dynamic content in this project client side scripting is used with JavaScript rather than Serveer side.
+- JavaScript -> It is scripting language used for uploading dynamic content in this project client side scripting is used with JavaScript rather than Server side.
 - GitHub -> It is used to deploy the project and after deploying it on github we can connect our repository to any cloud service provider.
 - GitLFS -> It is used to deploy large files on github since we can not upload file greater than 25MB on github and the Model size is approx 124MB.
 - Heroku CLI -> It is used to deploy the project on Heroku server which provides the server for web app deployment to users.
