@@ -1,6 +1,6 @@
 # Crop-Disease-Detection
-The app can be visited by clicking [here](https://crop-disease-detection-by-leaf.herokuapp.com/) or you can click on this link https://crop-disease-detection-by-leaf.herokuapp.com/
-App is Deployed on Heroku Server and can be used for image classification.
+App is Deployed on Heroku Server and can be used for image classification. The app can be visited by clicking [here](https://crop-disease-detection-by-leaf.herokuapp.com/)
+
 ## Table of Contents
 
     1    Project Title    
