@@ -3,8 +3,7 @@ App is Deployed on Heroku Server and can be used for image classification. The a
 
 ## Table of Contents
 
-    1    Project Title    
-    2    Domain    
+    1    Project Title   
     3    Problem Statement    
     4    Project Description    
     5    Assumptions
@@ -15,9 +14,6 @@ App is Deployed on Heroku Server and can be used for image classification. The a
     
  ## Project Title
 In Agriculture, leaf diseases have grown to be a dilemma as it can cause a significant diminution in both the quality and quantity of agricultural yields. Thus, automated recognition of diseases on leaves plays a crucial role in the agriculture sector. This Crop Disease detection project is based on the same idea which can be used to detect disease in specific crops on which it is trained.
-
-## Domain
-‘Agriculture is the backbone of Indian Economy’, said by Mahatma Gandhi. Even today, the situation is still the same, with almost the entire economy being sustained by agriculture. It contributes 16% of the overall GDP and accounts for employment of approximately 52% of the Indian population. 
 
 ## Problem Statement
 In Agriculture sector plants or crops, cultivation has seen fast development in both the quality and quantity of food production. However, the presence of diseases on crops especially on leaves has hindered the quality of agricultural goods. This severe effect can disturb any nation's economy especially of those where 70% of the inhabitants rely on the products from the agricultural sector for their livelihood and endurance. This problem can be solved by the detection of crop diseases and to detect crop disease this project can be used. This project will diagnose the disease based on images of leaves.
