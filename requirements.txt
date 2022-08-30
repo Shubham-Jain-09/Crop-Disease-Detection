@@ -4,7 +4,7 @@ gunicorn==19.9.0
 glob2==0.7
 h5py==2.9.0
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 keras==2.2.4
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
