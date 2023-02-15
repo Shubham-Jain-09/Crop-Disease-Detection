@@ -10,7 +10,7 @@ Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 Theano==1.0.4
 tensorflow>=1.15.2
-Werkzeug==0.15.5
+Werkzeug==2.2.3
 glob2==0.7
 future==0.17.1
 numpy==1.22.0
