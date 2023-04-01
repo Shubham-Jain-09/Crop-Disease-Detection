@@ -1,6 +1,5 @@
 
 from __future__ import division, print_function
-# coding=utf-8
 import sys
 import os
 import glob
@@ -25,7 +24,7 @@ MODEL_PATH = 'Model.hdf5'
 print(" ** Model Loading **")
 model = load_model(MODEL_PATH)
 print(" ** Model Loaded **")
-model._make_predict_function()          # Necessary
+model._make_predict_function()
 
 
 
@@ -34,11 +33,8 @@ def model_predict(img_path, model):
 
     # Preprocessing the image
     x = image.img_to_array(img)
-    # x = np.true_divide(x, 255)
     x = np.expand_dims(x, axis=0)
 
-    # Be careful how your trained model deals with the input
-    # otherwise, it won't make correct prediction!
     x = x/255
 
     preds = model.predict(x)
