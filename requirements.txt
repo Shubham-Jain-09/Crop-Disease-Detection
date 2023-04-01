@@ -12,6 +12,6 @@ Theano==1.0.4
 tensorflow>=1.15.2
 Werkzeug==2.2.3
 glob2==0.7
-future==0.17.1
+future==0.18.3
 numpy==1.22.0
 
