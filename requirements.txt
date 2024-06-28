@@ -1,6 +1,6 @@
 Flask==2.3.2
 gevent==23.9.0
-gunicorn==19.9.0
+gunicorn==22.0.0
 glob2==0.7
 h5py==2.9.0
 itsdangerous==1.1.0
@@ -14,4 +14,3 @@ Werkzeug==3.0.3
 glob2==0.7
 future==0.18.3
 numpy==1.22.0
-
