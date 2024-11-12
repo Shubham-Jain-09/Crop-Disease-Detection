@@ -1,40 +1,122 @@
+{% extends 'layout.html' %}
 
-{% extends "base.html" %} {% block content %}
-
-<h3>List of Crops on which model can be used for prediction</h3>
-<img src="{{url_for('static', filename='screenshot_3.png')}}" align="middle" />
-<h3>List of Crop Diseases on which model can be used for prediction</h3>
-
-<img src="{{url_for('static', filename='screenshot_2.png')}}" align="middle" />
-<h3>Use clear images of leaves on which our model can convolve and identify disease if exists</h3>
-<h3> Here is an example image</h3>  
-<img src="{{url_for('static', filename='strawberry-plant-leaf-spot.jpg')}}" align="middle" style="height: 224; width:224;"/>
-
-<div>
-    <form id="upload-file" method="post" enctype="multipart/form-data">
-        <label for="imageUpload" class="upload-label">
-            Choose...
-        </label>
-        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
-    </form>
-
-    <div class="image-section" style="display:none;">
-        <div class="img-preview">
-            <div id="imagePreview">
+{% block body %}
+<!-- banner -->
+<section class="banner_w3lspvt" id="home">
+    <div class="csslider infinity" id="slider1">
+        <div class="banner-top">
+            <div class="overlay">
+                <div class="container">
+                    <div class="w3layouts-banner-info text-center">
+                        <h3 class="text-wh">Arogya Krishi</h3>
+                        <h4 class="text-wh mx-auto my-4"><b>#WeAreFarmers'Voice.</b></h4>
+                        <h4 class="text-wh mx-auto my-4"><b>Get informed decisions about your farming strategy.</b></h4>
+                        <br>
+                        <h4 class="text-wh mx-auto my-4"><strong>Here are some questions we'll answer</strong></h4>
+                        <p class="text-li mx-auto mt-2">
+                            1. What crop to plant here? <br>
+                            2. What fertilizer to use? <br>
+                            3. Which disease does your crop have?<br>
+                            4. How to cure the disease?
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
-            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+    </div>
+</section>
+<!-- //banner -->
+
+<!-- File Upload Section -->
+<section class="file-upload py-5">
+    <div class="container py-md-4">
+        <h3 class="heading mb-sm-5 mb-4 text-center">Upload an Image for Disease Prediction</h3>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form id="upload-file" method="post" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+                    <label for="file" bold >Select Image: <br> Click On below tab To select Image</label>
+                    <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg" required class="form-control mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg">Predict!</button>
+                </form>
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="loader" style="display:none;"></div>
-    <h4> Predicted Output is:</h4>
-    <h3 id="result">
-        <span> </span>
-    </h3>
-    <h4> Thanks for the visit</h4>
+<!-- File Upload Section -->
 
-</div>
+
+
+<!-- Products & Services -->
+<section class="blog py-5">
+    <div class="container py-md-5">
+        <h3 class="heading mb-sm-5 mb-4 text-center">Our Services</h3>
+        <div class="row blog-grids">
+            <div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+                <img src="{{ url_for('static', filename='images/s3.jpg') }}" class="img-fluid" alt="" />
+                <a href="{{ url_for('crop_recommend') }}">
+                    <div class="blog-info">
+                        <h4>Crop</h4>
+                        <p class="mt-2">Recommendation about the type of crops to be cultivated which is best suited for the respective conditions</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
+                <img src="{{ url_for('static', filename='images/s2.jpg') }}" class="img-fluid" alt="" />
+                <a href="{{ url_for('fertilizer_recommendation') }}">
+                    <div class="blog-info">
+                        <h4>Fertilizer</h4>
+                        <p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil and the recommended crop</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
+                <img src="{{ url_for('static', filename='images/s4.jpg') }}" class="img-fluid" alt="">
+                <a href="{{ url_for('disease_prediction') }}">
+                    <div class="blog-info">
+                        <h4>Crop Disease</h4>
+                        <p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //Products & Services -->
+
+<!-- core values -->
+<section class="core-value py-5">
+    <div class="container py-md-4">
+        <h3 class="heading mb-sm-5 mb-4 text-center">About Us</h3>
+        <div class="row core-grids">
+            <div class="col-lg-6 core-left">
+                <img src="{{ url_for('static', filename='images/core.jpg') }}" class="img-fluid" alt="" />
+            </div>
+            <div class="col-lg-6 core-right">
+                <h3 class="mt-4">Improving Agriculture, Improving Lives, Cultivating Crops To Make Farmers Increase Profit.</h3>
+                <p class="mt-3">We use state-of-the-art machine learning and deep learning technologies to help you guide through the entire farming process. Make informed decisions to understand the demographics of your area, understand the factors that affect your crop and keep them healthy for a super awesome successful yield.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //core values -->
+
+<!-- Crop and Disease List Section -->
+<section class="crop-disease-list py-5">
+    <div class="container py-md-4">
+        <h3 class="heading mb-sm-5 mb-4 text-center">List of Crops and Diseases</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <h4>List of Crops on which the model can be used for prediction</h4>
+                <img src="{{url_for('static', filename='screenshot_3.png')}}" class="img-fluid" alt="List of Crops" />
+            </div>
+            <div class="col-lg-6">
+                <h4>List of Crop Diseases on which the model can be used for prediction</h4>
+                <img src="{{url_for('static', filename='screenshot_2.png')}}" class="img-fluid" alt="List of Diseases" />
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}

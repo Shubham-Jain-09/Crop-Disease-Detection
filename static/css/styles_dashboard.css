@@ -1,0 +1,349 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3e3e3e;
+    background-color: #f2efe6;
+    display: flex;
+    height: 100vh;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    display: flex;
+    height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #6b8e23;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.sidebar-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 1rem;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #2c3e50;  /* Darker color for visibility */
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-menu a:hover {
+    background-color: #f4f4f4;  /* Light gray background on hover */
+    color: #4b5320;  /* Dark green text color on hover */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    padding: 1rem;
+}
+
+/* Main Header */
+.main-header {
+    background-color: #6b8e23;
+    color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.main-header nav ul li {
+    margin: 0 1rem;
+}
+
+.main-header nav ul a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.main-header nav ul a:hover {
+    color: #a9dfbf;
+}
+
+/* Dashboard */
+.main-dashboard {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Farmers Page */
+.farmers-search h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.farmers-search input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.farmers-search p {
+    margin-bottom: 1rem;
+    color: #7f8c8d;
+}
+
+.farmers-search .filter-button, .farmers-search .req-button {
+    background-color: #8b4513;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.farmers-search .filter-button:hover, .farmers-search .req-button:hover {
+    background-color: #a0522d;
+}
+
+.farmers-search .results p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.farmer-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.farmer {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    width: calc(50% - 0.5rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.farmer:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.farmer-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #4b5320;
+}
+
+.farmer-location {
+    margin-bottom: 1rem;
+    color: #7f8c8d;
+}
+
+.add-button {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.add-button:hover {
+    background-color: #b22222;
+}
+
+/* Weather Page */
+.weather-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.temperature h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: #4b5320;
+}
+
+.temperature p {
+    margin-bottom: 0.5rem;
+    color: #7f8c8d;
+}
+
+.details p {
+    margin-bottom: 0.5rem;
+    color: #7f8c8d;
+}
+
+.hourly-forecast {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 0.5rem;
+}
+
+.forecast-graph {
+    margin-bottom: 1rem;
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.forecast-graph canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.forecast-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hourly {
+    text-align: center;
+}
+
+.hourly p {
+    margin-bottom: 0.5rem;
+    color: #7f8c8d;
+}
+
+/* Crop Analysis Page */
+#crops {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#crops h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4b5320;
+}
+
+#crops p {
+    color: #7f8c8d;
+}
+
+.crop-details {
+    margin-top: 2rem;
+}
+
+/* Disease Analysis Page */
+#disease {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#disease h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4b5320;
+}
+
+#disease p {
+    color: #7f8c8d;
+}
+
+.disease-details {
+    margin-top: 2rem;
+}
+
+/* Yearly Plan Page */
+#yearly {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#yearly h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4b5320;
+}
+
+#yearly p {
+    color: #7f8c8d;
+}

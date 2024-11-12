@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "କୃଷକ ଖୋଜ",
+    "Placeholder": "କୃଷକ କିମ୍ବା ସହର ନାମ",
+    "MoreFilters": "ଅଧିକ ଫିଲ୍ଟର",
+    "Status": "ଅବସ୍ଥା",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "ସ୍ପାଷ୍ଟ ବଦଳ • ଉଚ୍ଚ:57°F କମ:39°F",
+      "SunsetTime": "ସୂର୍ଯ୍ୟସ୍ତ: 6:05PM",
+      "FeelsLike": "ଏହିଭଳି ଲାଗେ: 53°F",
+      "SkyCover": "ଆକାଶ ଆଡ଼: 43%",
+      "WindSpeed": "ବାୟୁ ଗତି: 7 mph",
+      "Humidity": "ଆର୍ଦ୍ରତା: 25%",
+      "Precipitation": "1-ଘଣ୍ଟା ବର୍ଷା: 0mm"
+    }
+  }
+  

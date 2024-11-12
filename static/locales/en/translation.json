@@ -1,0 +1,16 @@
+{
+    "FarmersSearch": "Farmers Search",
+    "Placeholder": "Farmer or City Name",
+    "MoreFilters": "More filters",
+    "Status": "Status",
+    "Weather": {
+        "CurrentTemp": "57°F",
+        "WeatherConditions": "Scattered Clouds • H:57°F L:39°F",
+        "SunsetTime": "Sunset: 6:05PM",
+        "FeelsLike": "Feels like 53°F",
+        "SkyCover": "Sky Cover: 43%",
+        "WindSpeed": "Wind: 7 mph",
+        "Humidity": "Humidity: 25%",
+        "Precipitation": "1-hr Precip: 0mm"
+    }
+}

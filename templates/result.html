@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Prediction Result</h3>
+
+<div>
+    <h4>Predicted Disease:</h4>
+    <h3>{{ prediction.label }}</h3>
+    <h4>Score:</h4>
+    <p>{{ prediction.score | round(2) }}</p>
+</div>
+
+<div>
+    <h4>Uploaded Image:</h4>
+    <img src="data:image/png;base64,{{ image_base64 }}" alt="Uploaded Image" style="max-width: 100%; height: auto;" />
+</div>
+
+<a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+
+{% endblock %}

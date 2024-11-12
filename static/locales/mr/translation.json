@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "शेतकऱ्यांची शोध",
+    "Placeholder": "शेतकरी किंवा शहराचे नाव",
+    "MoreFilters": "अधिक फिल्टर",
+    "Status": "स्थिती",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "फिकट ढग • उच्च:57°F कमी:39°F",
+      "SunsetTime": "सूर्यास्त: 6:05PM",
+      "FeelsLike": "असे वाटते: 53°F",
+      "SkyCover": "आसमान कव्हर: 43%",
+      "WindSpeed": "वारा: 7 mph",
+      "Humidity": "आर्द्रता: 25%",
+      "Precipitation": "1-घंटा पर्जन्य: 0mm"
+    }
+  }
+  

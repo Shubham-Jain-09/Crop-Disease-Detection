@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "কৃষক অনুসন্ধান",
+    "Placeholder": "কৃষক বা শহরের নাম",
+    "MoreFilters": "আরও ফিল্টার",
+    "Status": "অবস্থা",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "বিক্ষিপ্ত মেঘ • উচ্চ:57°F কম:39°F",
+      "SunsetTime": "সূর্যাস্ত: 6:05PM",
+      "FeelsLike": "এমনই মনে হচ্ছে: 53°F",
+      "SkyCover": "আকাশ কভার: 43%",
+      "WindSpeed": "বাতাসের গতি: 7 mph",
+      "Humidity": "আর্দ্রতা: 25%",
+      "Precipitation": "1-ঘণ্টার বৃষ্টি: 0mm"
+    }
+  }
+  

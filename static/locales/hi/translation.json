@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "किसानों की खोज",
+    "Placeholder": "किसान या शहर का नाम",
+    "MoreFilters": "अधिक फिल्टर",
+    "Status": "स्थिति",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "बिखरे हुए बादल • उच्च:57°F निम्न:39°F",
+      "SunsetTime": "सूर्यास्त: 6:05PM",
+      "FeelsLike": "महसूस होता है: 53°F",
+      "SkyCover": "आसमान का आवरण: 43%",
+      "WindSpeed": "हवा की गति: 7 mph",
+      "Humidity": "आर्द्रता: 25%",
+      "Precipitation": "1-घंटे की वर्षा: 0mm"
+    }
+  }
+  

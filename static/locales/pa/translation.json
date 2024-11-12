@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "ਕਿਸਾਨਾਂ ਦੀ ਖੋਜ",
+    "Placeholder": "ਕਿਸਾਨ ਜਾਂ ਸ਼ਹਿਰ ਦਾ ਨਾਮ",
+    "MoreFilters": "ਹੋਰ ਫਿਲਟਰ",
+    "Status": "ਹਾਲਤ",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "ਪਸਾਰੀਆਂ ਬਦਲ • ਉੱਚ:57°F ਘੱਟ:39°F",
+      "SunsetTime": "ਸੂਰਜ ਡੁੱਬਣ ਦਾ ਸਮਾਂ: 6:05PM",
+      "FeelsLike": "ਇਸ ਤਰ੍ਹਾਂ ਮਹਿਸੂਸ ਹੁੰਦਾ ਹੈ: 53°F",
+      "SkyCover": "ਆਸਮਾਨ ਦੀ ਢਕਣ: 43%",
+      "WindSpeed": "ਹਵਾ ਦੀ ਗਤੀ: 7 mph",
+      "Humidity": "ਆਰਡ੍ਰਿਟੀ: 25%",
+      "Precipitation": "1-ਘੰਟਾ ਮੀਂਹ: 0mm"
+    }
+  }
+  

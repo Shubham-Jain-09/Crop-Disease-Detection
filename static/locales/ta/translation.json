@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "விவசாயிகளின் தேடு",
+    "Placeholder": "விவசாயி அல்லது நகரம் பெயர்",
+    "MoreFilters": "மேலும் துலக்கங்கள்",
+    "Status": "நிலை",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "சிதலான மேகங்கள் • அதிகம்:57°F குறைவாக:39°F",
+      "SunsetTime": "சூரியாஸ்தமனம்: 6:05PM",
+      "FeelsLike": "இதுபோல் உணர்கிறது: 53°F",
+      "SkyCover": "ஆசமான் அடுக்கி: 43%",
+      "WindSpeed": "காற்று வேகம்: 7 mph",
+      "Humidity": "ஆற்றல்: 25%",
+      "Precipitation": "1-மணிநேர மழை: 0mm"
+    }
+  }
+  

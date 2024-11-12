@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://unpkg.com/i18next@21.6.0/i18next.min.js"></script>
+<script src="https://unpkg.com/i18next-browser-languagedetector@6.1.0/i18nextBrowserLanguageDetector.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_dashboard.css') }}" />
+    <style>
+        /* Additional inline styles for quick adjustments */
+        .chart-container {
+            margin-top: 20px;
+        }
+        .chart {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 sidebar bg-light">
+                <div class="sidebar-header text-center">
+                    <h1><i class="fas fa-leaf"></i> Green Points</h1>
+                    <h2>Dashboard</h2>
+                </div>
+                <ul class="sidebar-menu list-group">
+                    <li class="list-group-item"><a href="#" onclick="showPage('farmers')">Farmers</a></li>
+                    <li class="list-group-item"><a href="#" onclick="showPage('weather')">Weather</a></li>
+                    <li class="list-group-item"><a href="#" onclick="showPage('crops')">Crop Analysis</a></li>
+                    <li class="list-group-item"><a href="#" onclick="showPage('disease')">Disease Analysis</a></li>
+                    <li class="list-group-item"><a href="#" onclick="showPage('yearly')">Yearly Plan</a></li>
+                </ul>
+            </aside>
+            <main class="col-md-9 main-content">
+                <header class="main-header">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">Green Points</a>
+                        <ul class="navbar-nav ml-auto">
+                            
+                            <div id="google_translate_element"></div>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Signup</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a></li>
+                            <li class="nav-item"><a href="/logout" class="btn btn-dark">Logout</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <section class="main-dashboard">
+                    <!-- Farmers Section -->
+                    <div id="farmers" class="page">
+                        <div class="farmers-search">
+                            <h1>Farmers Search</h1>
+                            <input type="text" placeholder="Farmer or City Name" id="searchInput" class="form-control" onkeyup="filterFarmers()" />
+                            <p>Separate multiple search terms with a comma, e.g.: John, New York</p>
+                            <button class="btn btn-primary">More filters</button>
+                            <button class="btn btn-secondary">Status</button>
+                            <div class="results mt-3">
+                                <p id="resultsCount">7 results</p>
+                                <div class="farmer-list" id="farmerList">
+                                    <!-- Farmers list -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="farmersChart" class="chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Weather Section -->
+                    <div id="weather" class="page" style="display: none;">
+                        <div class="weather-summary d-flex justify-content-between">
+                            <div class="temperature">
+                                <h1 id="currentTemp">57°F</h1>
+                                <p id="weatherConditions">Scattered Clouds • H:57°F L:39°F</p>
+                                <p id="sunsetTime">Sunset: 6:05PM</p>
+                            </div>
+                            <div class="details">
+                                <p id="feelsLike">Feels like 53°F</p>
+                                <p id="skyCover">Sky Cover: 43%</p>
+                                <p id="windSpeed">Wind: 7 mph</p>
+                                <p id="humidity">Humidity: 25%</p>
+                                <p id="precipitation">1-hr Precip: 0mm</p>
+                            </div>
+                        </div>
+                        <div class="hourly-forecast">
+                            <div class="forecast-header">
+                                <span>Hourly</span>
+                                <span>Daily</span>
+                                <span>Map</span>
+                            </div>
+                            <div class="forecast-graph">
+                                <canvas id="forecastChart" class="chart"></canvas>
+                            </div>
+                            <div class="forecast-details">
+                                <!-- Hourly forecast details -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Crop Analysis Section -->
+                    <div id="crops" class="page" style="display: none;">
+                        <h1>Crop Analysis</h1>
+                        <p>Analyze the current state of crops, growth stages, and yield predictions.</p>
+                        <div class="chart-container">
+                            <canvas id="cropsChart" class="chart"></canvas>
+                        </div>
+                        <div class="crop-details mt-4">
+                            <!-- Additional details about crops can go here -->
+                        </div>
+                    </div>
+
+                    <!-- Disease Analysis Section -->
+                    <div id="disease" class="page" style="display: none;">
+                        <h1>Disease Analysis</h1>
+                        <p>Monitor and predict crop diseases based on current conditions.</p>
+                        <div class="chart-container">
+                            <canvas id="diseaseChart" class="chart"></canvas>
+                        </div>
+                        <div class="disease-details mt-4">
+                            <!-- Disease details and recommendations go here -->
+                        </div>
+                    </div>
+
+                    <!-- Yearly Plan Section -->
+                    <div id="yearly" class="page" style="display: none;">
+                        <h1>Yearly Plan</h1>
+                        <p>Content for the yearly plan goes here.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Function to show the specified page and hide others
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.style.display = 'block';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+
+            // Optionally, initialize content-specific functions
+            if (pageId === 'weather') {
+                initializeWeatherChart();
+            } else if (pageId === 'farmers') {
+                initializeFarmersChart();
+            } else if (pageId === 'crops') {
+                initializeCropsChart();
+            } else if (pageId === 'disease') {
+                initializeDiseaseChart();
+            }
+        }
+
+        // Function to fetch and update data in real time
+        function updateRealTimeData() {
+            // Example: Fetch weather data
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('currentTemp').innerText = `${Math.round(data.main.temp - 273.15)}°C`;
+                    document.getElementById('weatherConditions').innerText = data.weather[0].description;
+                    document.getElementById('sunsetTime').innerText = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}`;
+                    document.getElementById('feelsLike').innerText = `Feels like ${Math.round(data.main.feels_like - 273.15)}°C`;
+                    document.getElementById('skyCover').innerText = `Sky Cover: ${data.clouds.all}%`;
+                    document.getElementById('windSpeed').innerText = `Wind: ${data.wind.speed} mph`;
+                    document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity}%`;
+                    document.getElementById('precipitation').innerText = `1-hr Precip: ${data.rain ? data.rain['1h'] : 0} mm`;
+                });
+        }
+
+        // Call updateRealTimeData every 10 minutes
+        setInterval(updateRealTimeData, 600000);
+
+        // Example function to initialize a chart for the farmers page
+        function initializeFarmersChart() {
+            const ctx = document.getElementById('farmersChart').getContext('2d');
+            const farmersChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Abrham', 'Dawit', 'Abera', 'Elias', 'Fitsum', 'Demelas', 'Abel'],
+                    datasets: [{
+                        label: 'Farmers Count',
+                        data: [10, 20, 15, 12, 25, 18, 22],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Example function to initialize a chart for the weather page
+        function initializeWeatherChart() {
+            const ctx = document.getElementById('forecastChart').getContext('2d');
+            const forecastChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['5PM', '6PM', '7PM', '8PM', '9PM', '10PM'],
+                    datasets: [{
+                        label: 'Temperature',
+                        data: [55, 47, 45, 43, 42, 40],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Example function to initialize a chart for the crops page
+        function initializeCropsChart() {
+            const ctx = document.getElementById('cropsChart').getContext('2d');
+            const cropsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Wheat', 'Corn', 'Soybean', 'Rice', 'Barley', 'Oats'],
+                    datasets: [{
+                        label: 'Crop Yield (tons)',
+                        data: [120, 150, 100, 130, 110, 90],
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Example function to initialize a chart for the disease page
+        function initializeDiseaseChart() {
+            const ctx = document.getElementById('diseaseChart').getContext('2d');
+            const diseaseChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Disease Risk',
+                        data: [2, 3, 5, 4, 6, 7, 8, 6, 5, 3, 4, 2],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Function to filter farmers in real time
+        function filterFarmers() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const farmers = document.querySelectorAll('.farmer');
+            let count = 0;
+
+            farmers.forEach(farmer => {
+                const name = farmer.querySelector('.farmer-name').innerText.toLowerCase();
+                const location = farmer.querySelector('.farmer-location').innerText.toLowerCase();
+                if (name.includes(input) || location.includes(input)) {
+                    farmer.style.display = 'block';
+                    count++;
+                } else {
+                    farmer.style.display = 'none';
+                }
+            });
+
+            document.getElementById('resultsCount').innerText = `${count} results`;
+        }
+
+        // Call to update data on page load
+        updateRealTimeData();
+    </script>
+    <script>
+        i18next
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+            lng: 'en', // default language
+            fallbackLng: 'en',
+            resources: {
+                en: {
+                    translation: {
+                        "FarmersSearch": "Farmers Search",
+                        "Placeholder": "Farmer or City Name",
+                        "MoreFilters": "More filters",
+                        "Status": "Status",
+                        "Weather": {
+                            "CurrentTemp": "57°F",
+                            "WeatherConditions": "Scattered Clouds • H:57°F L:39°F",
+                            "SunsetTime": "Sunset: 6:05PM",
+                            "FeelsLike": "Feels like 53°F",
+                            "SkyCover": "Sky Cover: 43%",
+                            "WindSpeed": "Wind: 7 mph",
+                            "Humidity": "Humidity: 25%",
+                            "Precipitation": "1-hr Precip: 0mm"
+                        }
+                    }
+                },
+                es: {
+                    translation: {
+                        "FarmersSearch": "Búsqueda de Agricultores",
+                        "Placeholder": "Nombre del Agricultor o Ciudad",
+                        "MoreFilters": "Más filtros",
+                        "Status": "Estado",
+                        "Weather": {
+                            "CurrentTemp": "57°F",
+                            "WeatherConditions": "Nubes dispersas • H:57°F L:39°F",
+                            "SunsetTime": "Atardecer: 6:05PM",
+                            "FeelsLike": "Se siente como 53°F",
+                            "SkyCover": "Cobertura del cielo: 43%",
+                            "WindSpeed": "Viento: 7 mph",
+                            "Humidity": "Humedad: 25%",
+                            "Precipitation": "Precipitación de 1 hora: 0 mm"
+                        }
+                    }
+                },
+                hi: {
+                    translation: {
+                        "FarmersSearch": "किसान खोज",
+                        "Placeholder": "किसान या शहर का नाम",
+                        "MoreFilters": "अधिक फ़िल्टर",
+                        "Status": "स्थिति",
+                        "Weather": {
+                            "CurrentTemp": "57°F",
+                            "WeatherConditions": "फैल चुकी बर्फ • H:57°F L:39°F",
+                            "SunsetTime": "सूर्यास्त: 6:05PM",
+                            "FeelsLike": "महसूस होता है 53°F",
+                            "SkyCover": "आसमान की ढाल: 43%",
+                            "WindSpeed": "हवा: 7 mph",
+                            "Humidity": "आर्द्रता: 25%",
+                            "Precipitation": "1-घंटे की वर्षा: 0mm"
+                        }
+                    }
+                },
+                mr: {
+                    translation: {
+                        "FarmersSearch": "शेतकरी शोध",
+                        "Placeholder": "शेतकरी किंवा शहराचे नाव",
+                        "MoreFilters": "अधिक फिल्टर",
+                        "Status": "स्थिती",
+                        "Weather": {
+                            "CurrentTemp": "57°F",
+                            "WeatherConditions": "विखरलेले ढग • H:57°F L:39°F",
+                            "SunsetTime": "सूर्यास्त: 6:05PM",
+                            "FeelsLike": "असे वाटते 53°F",
+                            "SkyCover": "आसमान कव्हर: 43%",
+                            "WindSpeed": "वारा: 7 mph",
+                            "Humidity": "आर्द्रता: 25%",
+                            "Precipitation": "1-तासाचा पाऊस: 0mm"
+                        }
+                    }
+                },
+                kn: {
+                    translation: {
+                        "FarmersSearch": "ಕೃಷಿಕರ ಶೋಧ",
+                        "Placeholder": "ಕೃಷಿಕ ಅಥವಾ ನಗರದ ಹೆಸರು",
+                        "MoreFilters": "ಹೆಚ್ಚು ಫಿಲ್ಟರ್‌ಗಳು",
+                        "Status": "ಸ್ಥಿತಿ",
+                        "Weather": {
+                            "CurrentTemp": "57°F",
+                            "WeatherConditions": "ವ್ಯಾಪಕ ಬಗ್ಗಲಿಗಳು • H:57°F L:39°F",
+                            "SunsetTime": "ಸೂರ್ಯাস্ত: 6:05PM",
+                            "FeelsLike": "ಹೀಗೇ ಅನುಭವಿಸುತ್ತಿದೆ 53°F",
+                            "SkyCover": "ಆಕಾಶದ ಕವರ್: 43%",
+                            "WindSpeed": "ಹಾವು: 7 mph",
+                            "Humidity": "ಆಧಾರವಿಲ್ಲ: 25%",
+                            "Precipitation": "1-ಮಿಣಿಟು: 0mm"
+                        }
+                    }
+                },
+                or: {
+                    translation: {
+                        "FarmersSearch": "କୃଷକ ଖୋଜ",
+                        "Placeholder": "କୃଷକ କିମ୍ବା ସହରର ନାମ",
+                        "MoreFilters": "ଅଧିକ ଫିଲ୍ଟର",
+                        "Status": "ସ୍ଥିତି",
+                        "Weather": {
+                            "CurrentTemp": "57°F",
+                            "WeatherConditions": "ବିକିରଣ କ୍ଲାଉଡ୍ • H:57°F L:39°F",
+                            "SunsetTime": "ସୂର୍ଯ୍ୟାସ୍ତ: 6:05PM",
+                            "FeelsLike": "ଅନୁଭବ ହୁଏ 53°F",
+                            "SkyCover": "ଆକାଶ କଭର୍: 43%",
+                            "WindSpeed": "ବାତାସ: 7 mph",
+                            "Humidity": "ଆଦ୍ରତା: 25%",
+                            "Precipitation": "1-ଘଣ୍ଟାର ବର୍ଷା: 0mm"
+                        }
+                    }
+                },
+            }
+        });
+        </script>
+    <script>
+        function changeLanguage(event) {
+            const language = event.target.value;
+            i18next.changeLanguage(language, () => {
+                updateContent();
+            });
+        }
+    
+        function updateContent() {
+            document.getElementById('searchInput').placeholder = i18next.t('Placeholder');
+            document.querySelector('.farmers-search h1').innerText = i18next.t('FarmersSearch');
+            document.querySelector('.btn-primary').innerText = i18next.t('MoreFilters');
+            document.querySelector('.btn-secondary').innerText = i18next.t('Status');
+        
+            const weatherData = i18next.t('Weather', { returnObjects: true });
+            document.getElementById('currentTemp').innerText = weatherData.CurrentTemp;
+            document.getElementById('weatherConditions').innerText = weatherData.WeatherConditions;
+            document.getElementById('sunsetTime').innerText = weatherData.SunsetTime;
+            document.getElementById('feelsLike').innerText = weatherData.FeelsLike;
+            document.getElementById('skyCover').innerText = weatherData.SkyCover;
+            document.getElementById('windSpeed').innerText = weatherData.WindSpeed;
+            document.getElementById('humidity').innerText = weatherData.Humidity;
+            document.getElementById('precipitation').innerText = weatherData.Precipitation;
+        }
+        
+        
+        // Initialize content on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent();
+        });
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/b87543e6-fc32-417f-b0be-739c0167b0df/webchat/v2.1/config.js"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,mr,ta,te,kn,or,bn,gu,ml,pa,as,ur,sr,si,sd,ne,ks,ma,kd,bh,ho,kp,ra,co,ch,go,na,li,ga,md,mi,no,ve,so,ti,be,wa,di,me,bu,ri,mp,ci,ke,ji,bl,mo,ru',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+</body>
+</html>

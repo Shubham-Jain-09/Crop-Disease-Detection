@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "వ్యవసాయుల వెదుకుడు",
+    "Placeholder": "వ్యవసాయి లేదా నగర పేరు",
+    "MoreFilters": "మరిన్ని ఫిల్టర్లు",
+    "Status": "అవస్థ",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "చెలిమి మేఘాలు • U:57°F L:39°F",
+      "SunsetTime": "సూర్యాస్తమయం: 6:05PM",
+      "FeelsLike": "ఇలా అనిపిస్తుంది: 53°F",
+      "SkyCover": "ఆకాశం కవర్: 43%",
+      "WindSpeed": "గాలి వేగం: 7 mph",
+      "Humidity": "ఆర్ధ్రత: 25%",
+      "Precipitation": "1-గంట పుంజు: 0mm"
+    }
+  }
+  

@@ -1,0 +1,16 @@
+{
+    "FarmersSearch": "Búsqueda de Agricultores",
+    "Placeholder": "Nombre del Agricultor o Ciudad",
+    "MoreFilters": "Más filtros",
+    "Status": "Estado",
+    "Weather": {
+        "CurrentTemp": "57°F",
+        "WeatherConditions": "Nubes dispersas • H:57°F L:39°F",
+        "SunsetTime": "Atardecer: 6:05PM",
+        "FeelsLike": "Se siente como 53°F",
+        "SkyCover": "Cobertura del cielo: 43%",
+        "WindSpeed": "Viento: 7 mph",
+        "Humidity": "Humedad: 25%",
+        "Precipitation": "Precipitación de 1 hora: 0 mm"
+    }
+}

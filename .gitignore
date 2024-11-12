@@ -1,0 +1,5 @@
+# Start of Selection
+__pycache__/
+.env
+reboot.json
+# End of Selection

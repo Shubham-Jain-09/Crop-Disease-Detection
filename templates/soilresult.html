@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+    html body {
+        background-color: rgb(206, 206, 228);
+    }
+</style>
+
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+    <b>Soil Analysis Result</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 10rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <h3 style="text-align: center; color: black;">
+    The best crop to be sown on this soil is: <b>{{ prediction }}</b>
+  </h3>
+  <br />
+  <div class="d-flex justify-content-center">
+    <a href="{{ url_for('soil_prediction') }}" class="btn btn-info" style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;">Try Again</a>
+  </div>
+</div>
+
+{% endblock %}

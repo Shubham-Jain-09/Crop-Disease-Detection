@@ -1,0 +1,366 @@
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: url("../images/farm_background_1.jpg") center/cover no-repeat;
+    background-color: #f4f3ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent for a rustic feel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    color: black;
+}
+
+ 
+.navbar {
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navbar .hamburger-btn {
+    display: none;
+    color: #4a403a;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.navbar .logo {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar .logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.navbar .logo h2 {
+    color: #4a403a;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: none;
+    color: #4a403a;
+    cursor: pointer;
+}
+
+.navbar .links a {
+    color: #4a403a;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.1s ease;
+}
+
+.navbar .links a:hover {
+    color: #7da453; /* Greenish color to represent nature */
+}
+
+.navbar .login-btn {
+    border: none;
+    outline: none;
+    background: #7da453;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.navbar .login-btn:hover {
+    background: #6c8c44;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.form-popup {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-popup .form-details {
+    width: 100%;
+    min-height: fit-content;
+    padding: 0.5%;
+    background: #7da453;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/farm_background.jpg");
+    background-size: cover;
+    background-position: center;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 60px; /* Adjusted margin-top to ensure it clears the fixed navbar */
+}
+
+/* Additional adjustments if necessary for responsiveness */
+@media (max-width: 760px) {
+    .form-popup .form-details {
+        width: 90%;
+        margin-top: 20px; /* Ensure some space from the top on small screens */
+    }
+}
+
+.form-popup .form-details img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+ 
+
+
+.form-popup .form-content {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-popup .form-content h2 {
+    color: #4a403a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-popup .form-content form {
+    width: 100%;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px 15px 10px 40px; /* Added padding-left to make space for the icon */
+    border: 1px solid #7da453;
+    border-radius: 5px;
+    background-color: #f4f3ef;
+    font-size: 1rem;
+    color: #4a403a;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.input-field input:focus {
+    border-color: #4a403a;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #7da453;
+    font-size: 1.2rem; /* Adjust size if needed */
+}
+
+.input-field label {
+    display: none;
+    margin-left: 2%;
+}
+
+.form-popup .btn {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background-color: #7da453;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.form-popup .btn:hover {
+    background-color: #6c8c44;
+}
+
+.form-popup .form-content p {
+    margin-top: 20px;
+    color: #4a403a;
+}
+
+.form-popup .form-content a {
+    color: #7da453;
+    text-decoration: none;
+}
+
+.form-popup .form-content a:hover {
+    text-decoration: underline;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background: linear-gradient(45deg, #7da453, #6c8c44);
+    opacity: 0.8;
+    animation: animateWave 4s linear infinite;
+}
+
+.wave:nth-child(2) {
+    height: 20%;
+    animation-delay: 1s;
+    background: linear-gradient(45deg, #6c8c44, #5b7935);
+}
+
+.wave:nth-child(3) {
+    height: 25%;
+    animation-delay: 2s;
+    background: linear-gradient(45deg, #5b7935, #4b6a28);
+}
+
+@keyframes animateWave {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 950px) {
+    .navbar :is(.hamburger-btn, .close-btn) {
+        display: block;
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar .logo img {
+        display: none;
+    }
+
+    .navbar .logo h2 {
+        font-size: 1.4rem;
+    }
+
+    .navbar .links {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        left: -100%;
+        display: block;
+        height: 100vh;
+        width: 100%;
+        padding-top: 60px;
+        text-align: center;
+        background: #fff;
+        transition: 0.2s ease;
+    }
+
+    .navbar .links.show-menu {
+        left: 0;
+    }
+
+    .navbar .links a {
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        color: #4a403a;
+    }
+
+    .navbar .links a:hover {
+        color: #7da453;
+    }
+
+    .navbar .login-btn {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 760px) {
+    .form-popup {
+        width: 95%;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .form-popup .form-details {
+        display: none;
+    }
+
+    .form-popup .form-content {
+        padding: 30px 20px;
+    }
+}

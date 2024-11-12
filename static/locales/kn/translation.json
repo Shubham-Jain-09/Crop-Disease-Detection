@@ -1,0 +1,17 @@
+{
+    "FarmersSearch": "ಕೃಷಕ ಹುಡುಕು",
+    "Placeholder": "ಕೃಷಕ ಅಥವಾ ನಗರ ಹೆಸರು",
+    "MoreFilters": "ಹೆಚ್ಚು ಶೋಧಕಗಳು",
+    "Status": "ಸ್ಥಿತಿ",
+    "Weather": {
+      "CurrentTemp": "57°F",
+      "WeatherConditions": "ಕೀಲು ಮೋಡಗಳು • ಎತ್ತರ:57°F ಕೀಟ:39°F",
+      "SunsetTime": "ಸೂರ್ಯಾಸ್ತ: 6:05PM",
+      "FeelsLike": "ಹೀಗೆಯೇ ಹಾರೀತದೆ: 53°F",
+      "SkyCover": "ಆಕಾಶ ಆವರಣೆ: 43%",
+      "WindSpeed": "ಗಾಳಿ ವೇಗ: 7 mph",
+      "Humidity": "ಆर्द್ರತೆ: 25%",
+      "Precipitation": "1-ಘಂಟೆ ಮಳೆ: 0mm"
+    }
+  }
+  
