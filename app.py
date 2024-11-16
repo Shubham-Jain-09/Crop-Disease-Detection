@@ -223,7 +223,7 @@ classes = {
 
 # app = Flask(__name__)
 # API key for OpenWeatherMap
-# weather_api_key = ''
+# weather_api_key =''
 
 load_dotenv()  # Load environment variables from .env
 
@@ -511,22 +511,26 @@ def model_predict(image_path, model):
     """
     Predicts the soil type and suggests crops based on the model prediction.
     """
-    image = load_img(image_path, target_size=(224, 224))
-    image = img_to_array(image)
-    image = image / 255.0
-    image = np.expand_dims(image, axis=0)
-    
-    result = np.argmax(model.predict(image))
-    prediction = classes[result]
-    
-    if result == 0:
-        return "Alluvial", "Alluvial.html"
-    elif result == 1:
-        return "Black", "Black.html"
-    elif result == 2:
-        return "Clay", "Clay.html"
-    elif result == 3:
-        return "Red", "Red.html"
+    try:
+        image = load_img(image_path, target_size=(224, 224))
+        image = img_to_array(image)
+        image = image / 255.0
+        image = np.expand_dims(image, axis=0)
+        
+        result = np.argmax(model.predict(image))
+        prediction = classes[result]
+        
+        if result == 0:
+            return "Alluvial", "Alluvial.html"
+        elif result == 1:
+            return "Black", "Black.html"
+        elif result == 2:
+            return "Clay", "Clay.html"
+        elif result == 3:
+            return "Red", "Red.html"
+    except Exception as e:
+        print(f"Error: {e}")  # Log the error for debugging
+        return "Sorry we couldn't process your request currently. Please try again", None
 
 
 def weather_fetch(city_name):
@@ -745,13 +749,13 @@ def soil_prediction():
 
 @ app.route('/fertilizer')
 def fertilizer_recommendation():
-    title = 'Harvestify - Fertilizer Suggestion'
+    title = 'Arogya Krishi - Fertilizer Suggestion'
 
     return render_template('fertilizer.html', title=title)
 
 @ app.route('/fertilizer-predict', methods=['POST'])
 def fert_recommend():
-    title = 'Harvestify - Fertilizer Suggestion'
+    title = 'Arogya Krishi - Fertilizer Suggestion'
 
     crop_name = str(request.form['cropname'])
     N = int(request.form['nitrogen'])
@@ -759,7 +763,7 @@ def fert_recommend():
     K = int(request.form['pottasium'])
     # ph = float(request.form['ph'])
 
-    df = pd.read_csv('Data/fertilizer.csv')
+    df = pd.read_csv('D:\\new_crop\\Apna_kisan_MVp\\Apna_kisan_MVP\data\\fertilizer.csv')
 
     nr = df[df['Crop'] == crop_name]['N'].iloc[0]
     pr = df[df['Crop'] == crop_name]['P'].iloc[0]
