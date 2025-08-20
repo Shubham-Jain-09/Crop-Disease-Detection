@@ -1,6 +1,6 @@
 Flask==2.3.2
 gevent==23.9.0
-gunicorn==22.0.0
+gunicorn==23.0.0
 glob2==0.7
 h5py==2.9.0
 itsdangerous==1.1.0
