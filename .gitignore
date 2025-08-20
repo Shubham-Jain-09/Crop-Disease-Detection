@@ -3,3 +3,4 @@ __pycache__/
 .env
 reboot.json
 # End of Selection
+config.py

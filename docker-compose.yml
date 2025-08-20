@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - OPEN_WEATHER_APIKEY=${OPEN_WEATHER_APIKEY}
+      - HUGGINGFACE_LOGIN_TOKEN=${HUGGINGFACE_LOGIN_TOKEN}
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: sqlite3:latest
+    volumes:
+      - ./instance:/data
+    environment:
+      - SQLITE_DATABASE=farmers_database.db
+
+networks:
+  default:
+    driver: bridge
