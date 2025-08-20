@@ -33,7 +33,9 @@
 
 ###  👉 Problem statement ID: SIH - 1638 
 
-Theme - Agri&amp;tech Background: Crop diseases can devastate yields leading to significant financial losses for farmers. Early detection and timely intervention are crucial for effective management. Description: Develop an AI-driven system that analyzes crop images and environmental data to predict potential disease outbreaks. This system will provide farmers with actionable insights and treatment recommendations to mitigate risks. Expected Solution: A mobile and web-based application that utilizes machine learning algorithms to identify crop diseases and suggest preventive measures and treatments based on real-time data.
+Theme - Agri&tech 
+
+Background: Crop diseases can devastate yields leading to significant financial losses for farmers. Early detection and timely intervention are crucial for effective management. Description: Develop an AI-driven system that analyzes crop images and environmental data to predict potential disease outbreaks. This system will provide farmers with actionable insights and treatment recommendations to mitigate risks. Expected Solution: A mobile and web-based application that utilizes machine learning algorithms to identify crop diseases and suggest preventive measures and treatments based on real-time data.
 
 
 ### 💡 Our Approach :
@@ -352,7 +354,7 @@ matches the Project requirements and follow all the guidelines we will happy to 
 
 4.) Minal 
 
-5.) Tanushri
+5.) Tanushri Kharkar
 
 
 ## 🛡️ License:
